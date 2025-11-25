@@ -110,13 +110,13 @@ function TaskList({ title, tasks, onChange, showAI = true, aiLabel = "Ứng dụ
           )}
 
           {showAI && (
-            <div className="form-group">
+            <div className="form-group form-group-full">
               <label>{aiLabel}:</label>
-              <input
-                type="text"
+              <textarea
                 value={task.ungDungAI}
                 onChange={(e) => updateTask(task.id, 'ungDungAI', e.target.value)}
-                placeholder="Sử dụng Claude để viết script xử lý data..."
+                placeholder="Sử dụng Claude để viết script xử lý data, gen code SQL xóa dữ liệu..."
+                rows={2}
               />
             </div>
           )}

@@ -178,6 +178,16 @@
   border-left: 4px solid #667eea;
 }
 
+.form-group-full {
+  width: 100%;
+}
+
+.form-group-full textarea {
+  width: 100%;
+  min-height: 60px;
+  resize: vertical;
+}
+
 .task-header {
   display: flex;
   justify-content: space-between;
