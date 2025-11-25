@@ -78,6 +78,12 @@ function ReportPreview({ personalInfo, tasksDone, tasksPlanned, suggestions, rep
     if (task.maJira) {
       text += ` (${task.maJira})`;
     }
+
+    // Add AI usage for this task
+    if (task.ungDungAI) {
+      text += `\n  + Ứng dụng AI: ${task.ungDungAI}`;
+    }
+
     return text;
   };
 
@@ -106,6 +112,11 @@ function ReportPreview({ personalInfo, tasksDone, tasksPlanned, suggestions, rep
         // Done/Test: just show status
         html += ` - ${getTrangThaiText(task.trangThai)}`;
       }
+    }
+
+    // Add AI usage for this task
+    if (task.ungDungAI) {
+      html += `<br>&nbsp;&nbsp;+ Ứng dụng AI: ${task.ungDungAI}`;
     }
 
     return html;
@@ -144,10 +155,6 @@ I. Kết quả công việc ngày ${formatDate(reportDate)}
       tasksDone.forEach((task) => {
         content += generateTaskText(task) + '\n';
       });
-      const aiSection = generateAISection(tasksDone, 'Ứng dụng AI');
-      if (aiSection) {
-        content += aiSection + '\n';
-      }
     } else {
       content += '- (Chưa có công việc)\n';
     }
@@ -160,10 +167,6 @@ II. Dự kiến công việc ngày ${formatDate(planDate)}
       tasksPlanned.forEach((task) => {
         content += generateTaskText(task) + '\n';
       });
-      const aiSection = generateAISection(tasksPlanned, 'Ứng dụng AI');
-      if (aiSection) {
-        content += aiSection + '\n';
-      }
       const supportSection = generateSupportSection(tasksPlanned);
       if (supportSection) {
         content += supportSection + '\n';
@@ -198,10 +201,6 @@ Phụ trách trực tiếp: ${personalInfo.phuTrachTrucTiep}</p>
       tasksDone.forEach((task) => {
         html += generateTaskHtml(task) + '<br>\n';
       });
-      const aiSection = generateAISection(tasksDone, 'Ứng dụng AI');
-      if (aiSection) {
-        html += aiSection + '<br>\n';
-      }
     } else {
       html += '- (Chưa có công việc)<br>\n';
     }
@@ -214,10 +213,6 @@ Phụ trách trực tiếp: ${personalInfo.phuTrachTrucTiep}</p>
       tasksPlanned.forEach((task) => {
         html += generateTaskHtml(task) + '<br>\n';
       });
-      const aiSection = generateAISection(tasksPlanned, 'Ứng dụng AI');
-      if (aiSection) {
-        html += aiSection + '<br>\n';
-      }
       const supportSection = generateSupportSection(tasksPlanned);
       if (supportSection) {
         html += supportSection + '<br>\n';
