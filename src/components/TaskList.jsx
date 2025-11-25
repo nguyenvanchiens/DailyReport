@@ -71,6 +71,8 @@ function TaskList({ title, tasks, onChange, showAI = true, aiLabel = "Ứng dụ
                 <option value="test">Test</option>
                 <option value="processing">Processing</option>
                 <option value="pending">Pending</option>
+                <option value="reception">Reception</option>
+                <option value="support">Support</option>
               </select>
             </div>
 

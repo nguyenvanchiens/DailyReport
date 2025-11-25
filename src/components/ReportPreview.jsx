@@ -33,7 +33,9 @@ function ReportPreview({ personalInfo, tasksDone, tasksPlanned, suggestions, rep
       'done': 'Done',
       'test': 'Test',
       'processing': 'Processing',
-      'pending': 'Pending'
+      'pending': 'Pending',
+      'reception': 'Reception',
+      'support': 'Support'
     };
     return map[trangThai] || trangThai;
   };
