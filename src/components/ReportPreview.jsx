@@ -191,8 +191,7 @@ II. Dự kiến công việc ngày ${formatDate(planDate)}
 III. Ý kiến đề xuất
 - ${suggestions || 'Không có'}
 
-Trân trọng,
-${personalInfo.hoTen}`;
+Trân trọng`;
 
     return { subject, content };
   };
@@ -249,8 +248,7 @@ Phụ trách trực tiếp: ${personalInfo.phuTrachTrucTiep}</p>
 <p><strong>III. Ý kiến đề xuất</strong></p>
 <p>- ${suggestions || 'Không có'}</p>
 
-<p>Trân trọng,<br>
-${personalInfo.hoTen}</p>
+<p>Trân trọng</p>
 </div>`;
 
     return html;
