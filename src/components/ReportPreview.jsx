@@ -152,8 +152,14 @@ I. Kết quả công việc ngày ${formatDate(reportDate)}
 `;
 
     if (tasksDone.length > 0) {
-      tasksDone.forEach((task) => {
-        content += generateTaskText(task) + '\n';
+      tasksDone.forEach((task, index) => {
+        content += generateTaskText(task);
+        // Thêm dòng trống giữa các task (trừ task cuối)
+        if (index < tasksDone.length - 1) {
+          content += '\n\n';
+        } else {
+          content += '\n';
+        }
       });
     } else {
       content += '- (Chưa có công việc)\n';
@@ -164,8 +170,14 @@ II. Dự kiến công việc ngày ${formatDate(planDate)}
 `;
 
     if (tasksPlanned.length > 0) {
-      tasksPlanned.forEach((task) => {
-        content += generateTaskText(task) + '\n';
+      tasksPlanned.forEach((task, index) => {
+        content += generateTaskText(task);
+        // Thêm dòng trống giữa các task (trừ task cuối)
+        if (index < tasksPlanned.length - 1) {
+          content += '\n\n';
+        } else {
+          content += '\n';
+        }
       });
       const supportSection = generateSupportSection(tasksPlanned);
       if (supportSection) {
@@ -198,8 +210,14 @@ Phụ trách trực tiếp: ${personalInfo.phuTrachTrucTiep}</p>
 `;
 
     if (tasksDone.length > 0) {
-      tasksDone.forEach((task) => {
-        html += generateTaskHtml(task) + '<br>\n';
+      tasksDone.forEach((task, index) => {
+        html += generateTaskHtml(task);
+        // Thêm khoảng cách giữa các task
+        if (index < tasksDone.length - 1) {
+          html += '<br><br>\n';
+        } else {
+          html += '<br>\n';
+        }
       });
     } else {
       html += '- (Chưa có công việc)<br>\n';
@@ -210,8 +228,14 @@ Phụ trách trực tiếp: ${personalInfo.phuTrachTrucTiep}</p>
 `;
 
     if (tasksPlanned.length > 0) {
-      tasksPlanned.forEach((task) => {
-        html += generateTaskHtml(task) + '<br>\n';
+      tasksPlanned.forEach((task, index) => {
+        html += generateTaskHtml(task);
+        // Thêm khoảng cách giữa các task
+        if (index < tasksPlanned.length - 1) {
+          html += '<br><br>\n';
+        } else {
+          html += '<br>\n';
+        }
       });
       const supportSection = generateSupportSection(tasksPlanned);
       if (supportSection) {
