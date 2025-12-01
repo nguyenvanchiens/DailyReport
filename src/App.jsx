@@ -23,7 +23,7 @@ function App() {
     donVi: '',
     phuTrachTrucTiep: '',
     emailPhuTrach: '',
-    emailMacDinh: 'baocaongay.cntt@hopnhat.vn'
+    emailMacDinh: 'baocaongay.cntt@hopnhat.vn, quynn@hncjsc.vn'
   });
 
   // State cho ngày (mặc định hôm nay và ngày mai)
